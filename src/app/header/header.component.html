@@ -1,1 +1,14 @@
-<p>header works!</p>
+<p>Welcome to {{name}}</p>
+
+<!-- source to target  -->
+<input type="text" [value]="name">
+<br>
+
+<!-- target to source  -->
+<button (click)="CallMyFunc()">Submit</button>
+<br>
+
+<!-- 2-way data binding  -->
+<input type="text" [value]="name" (input)="updateValue($event)">
+<p>{{name}}</p>
+<br>

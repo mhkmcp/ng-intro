@@ -308,15 +308,26 @@
 
 <div class="content" role="main">
 
-  <!-- Highlight Card -->
-  <div class="card highlight-card card-small">
+  <!-- two-way data binding  -->
 
-    <span>{{ title }} app is running!</span>
+  <input type="text" [(ngModel)]="country">
+  <p>{{country}}</p>
+  <br>
 
-  </div>
+  <table>
+    <tr>
+      <td>S No.</td>
+      <td>Name</td>
+      <td>Status</td>
+    </tr>
+    <tr *ngFor="let person of persons; let myIndex=index;">
+      <td>{{ myIndex + 1}}</td>
+      <td>{{ person.name }}</td>
+      <td>{{ person.online }}</td>
+    </tr>
+  </table>
 
   <!-- Resources -->
-  <h2>Resources</h2>
   <div class="card-container">
     <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
       <span>Learn Angular</span>
@@ -344,4 +355,7 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+<router-outlet>
+
+
+</router-outlet>
